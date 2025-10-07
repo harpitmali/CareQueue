@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareQueue - My Donations</title>
+    <link rel="icon" type="image/x-icon" href="./Images/icon1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Custom Tailwind configuration to use the same color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2a9d8f',   // Original Teal
+                        'primary-dark': '#248a7d',
+                        'secondary': '#e9c46a', // Original Gold
+                        'secondary-dark': '#d8b45a',
+                        'light-bg': '#e8f5e9',   // Light green background
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-bg font-sans">
+
+    <header class="bg-primary shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="careQueue.html" class="text-2xl font-bold text-white">CareQueue</a>
+            <ul class="flex items-center space-x-8">
+                <li><a href="dashboard.html" class="text-white hover:text-secondary font-semibold transition-colors">Dashboard</a></li>
+                <li><a href="profile.html" class="text-white hover:text-secondary font-semibold transition-colors">Profile</a></li>
+                <li><a href="careQueue.html" class="bg-secondary text-white font-bold py-2 px-4 rounded-md shadow hover:bg-secondary-dark transition-all duration-300">
+                    Logout
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-primary mb-8 text-center md:text-left">My Donations History</h1>
+        <p class="text-lg text-gray-700 mb-10 text-center md:text-left">A complete record of your generosity.</p>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Filter & Sort</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="status-filter" class="block text-sm font-medium text-gray-700">Status</label>
+                    <select id="status-filter" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                        <option>All Statuses</option>
+                        <option>Pending Pickup</option>
+                        <option>In Transit</option>
+                        <option>Received by NGO</option>
+                        <option>Delivered to Beneficiary</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="ngo-filter" class="block text-sm font-medium text-gray-700">NGO</label>
+                    <select id="ngo-filter" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                        <option>All NGOs</option>
+                        <option>Hope Foundation</option>
+                        <option>Smile Charity</option>
+                        <option>Community Helpers</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sort-by" class="block text-sm font-medium text-gray-700">Sort By</label>
+                    <select id="sort-by" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                        <option>Date (Newest)</option>
+                        <option>Date (Oldest)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-xl font-bold text-gray-800">Donation ID: #CQD78901</p>
+                    <p class="text-lg text-gray-700 mt-1">Winter Jackets & Sweaters (5 items)</p>
+                    <p class="text-sm text-gray-500">To: <span class="font-semibold text-primary">Hope Foundation</span></p>
+                    <p class="text-sm text-gray-500">Date: December 15, 2024</p>
+                </div>
+                <div class="flex flex-col items-start md:items-end">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-2">
+                        <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8">
+                            <circle cx="4" cy="4" r="3" />
+                        </svg>
+                        Delivered to Beneficiary
+                    </span>
+                    <a href="#" class="text-primary hover:text-primary-dark text-sm font-semibold">View Details / Receipt</a>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-xl font-bold text-gray-800">Donation ID: #CQD78899</p>
+                    <p class="text-lg text-gray-700 mt-1">School Uniforms & Books (1 set)</p>
+                    <p class="text-sm text-gray-500">To: <span class="font-semibold text-primary">Smile Charity</span></p>
+                    <p class="text-sm text-gray-500">Date: August 22, 2024</p>
+                </div>
+                <div class="flex flex-col items-start md:items-end">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 mb-2">
+                        <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-yellow-400" fill="currentColor" viewBox="0 0 8 8">
+                            <circle cx="4" cy="4" r="3" />
+                        </svg>
+                        Received by NGO
+                    </span>
+                    <a href="#" class="text-primary hover:text-primary-dark text-sm font-semibold">View Details / Receipt</a>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-xl font-bold text-gray-800">Donation ID: #CQD78890</p>
+                    <p class="text-lg text-gray-700 mt-1">Assorted Clothes (Bag)</p>
+                    <p class="text-sm text-gray-500">To: <span class="font-semibold text-primary">Community Helpers</span></p>
+                    <p class="text-sm text-gray-500">Date: July 01, 2024</p>
+                </div>
+                <div class="flex flex-col items-start md:items-end">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-2">
+                        <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-blue-400" fill="currentColor" viewBox="0 0 8 8">
+                            <circle cx="4" cy="4" r="3" />
+                        </svg>
+                        Pending Pickup
+                    </span>
+                    <a href="#" class="text-primary hover:text-primary-dark text-sm font-semibold">View Details</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-1">
+                    <h4 class="text-xl font-bold text-secondary mb-4">CareQueue</h4>
+                    <p class="text-gray-400">Bridging the gap between donors and NGOs through safe and efficient clothing donation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="careQueue.html#campaigns" class="hover:text-white transition-colors">Campaigns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">For NGOs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Get Involved</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Donate Clothes</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Volunteer</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner with Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Contact</h4>
+                    <p class="text-gray-400">123 Charity Lane,<br>Hopeville, India</p>
+                    <p class="text-gray-400 mt-2">Email: contact@carequeue.org</p>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 CareQueue. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

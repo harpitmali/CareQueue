@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareQueue - Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="./Images/icon1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Custom Tailwind configuration to use the same color palette
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2a9d8f',   // Original Teal
+                        'primary-dark': '#248a7d',
+                        'secondary': '#e9c46a', // Original Gold
+                        'secondary-dark': '#d8b45a',
+                        'light-bg': '#e8f5e9',   // Light green background
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-bg font-sans flex flex-col min-h-screen"> <header class="bg-primary shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="careQueue.html" class="text-2xl font-bold text-white">CareQueue</a>
+            <ul class="flex items-center space-x-8">
+                <li><a href="donations.html" class="text-white hover:text-secondary font-semibold transition-colors">My Donations</a></li>
+                <li><a href="profile.html" class="text-white hover:text-secondary font-semibold transition-colors">Profile</a></li>
+                <li><a href="careQueue.html" class="bg-secondary text-white font-bold py-2 px-4 rounded-md shadow hover:bg-secondary-dark transition-all duration-300">
+                    Logout
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 flex-grow"> <h1 class="text-4xl font-bold text-primary mb-8 text-center md:text-left">Welcome, Donor!</h1>
+        <p class="text-lg text-gray-700 mb-10 text-center md:text-left">Here's a summary of your activity and ways to continue making a difference.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="text-5xl text-secondary mb-4">📦</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Total Donations</h3>
+                <p class="text-gray-600 text-3xl font-semibold">5</p>
+                <p class="text-primary text-sm mt-2">items contributed</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="text-5xl text-secondary mb-4">💖</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Campaigns Followed</h3>
+                <p class="text-gray-600 text-3xl font-semibold">3</p>
+                <p class="text-primary text-sm mt-2">making an impact</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="text-5xl text-secondary mb-4">👤</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Profile Status</h3>
+                <p class="text-gray-600 text-3xl font-semibold">80%</p>
+                <p class="text-primary text-sm mt-2">complete</p>
+            </div>
+        </div>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-6 text-center md:text-left">Your Recent Donations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4">
+                    <div class="flex-shrink-0 text-3xl text-primary">👕</div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800">Winter Jackets & Sweaters</p>
+                        <p class="text-gray-600 text-sm">Donated to Hope Foundation</p>
+                        <p class="text-gray-500 text-xs">Dec 15, 2024 - <span class="text-primary">Delivered</span></p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-center space-x-4">
+                    <div class="flex-shrink-0 text-3xl text-primary">🎒</div>
+                    <div>
+                        <p class="text-lg font-semibold text-gray-800">School Uniforms & Books</p>
+                        <p class="text-gray-600 text-sm">Donated to Smile Charity</p>
+                        <p class="text-gray-500 text-xs">Aug 22, 2024 - <span class="text-primary">Processed</span></p>
+                    </div>
+                </div>
+            </div>
+             <div class="text-center mt-8">
+                <a href="donations.html" class="bg-secondary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-secondary-dark transition-all duration-300">
+                    View All Donations
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-bold text-primary mb-6 text-center md:text-left">Suggested Campaigns</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop" alt="General clothing donation" class="w-full h-40 object-cover">
+                    <div class="p-4 flex-grow flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">Local Community Aid</h3>
+                        <p class="text-sm text-gray-500 mb-3">by Community Helpers</p>
+                        <p class="text-gray-600 text-sm mb-3 flex-grow">Support local families with essential clothing items.</p>
+                        <div class="mb-3">
+                            <div class="flex justify-between text-xs font-medium text-gray-600 mb-1">
+                                <span>Progress</span>
+                                <span>55%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 55%;"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="w-full text-center bg-secondary text-white font-bold py-2 px-4 rounded-md text-sm hover:bg-secondary-dark transition-colors duration-300 mt-auto">
+                            View & Donate
+                        </a>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1972&auto=format&fit=crop" alt="General clothing donation" class="w-full h-40 object-cover">
+                    <div class="p-4 flex-grow flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-800 mb-1">Youth Sports Gear</h3>
+                        <p class="text-sm text-gray-500 mb-3">by Sports for All</p>
+                        <p class="text-gray-600 text-sm mb-3 flex-grow">Collecting sports attire for underprivileged youth programs.</p>
+                        <div class="mb-3">
+                            <div class="flex justify-between text-xs font-medium text-gray-600 mb-1">
+                                <span>Progress</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="w-full text-center bg-secondary text-white font-bold py-2 px-4 rounded-md text-sm hover:bg-secondary-dark transition-colors duration-300 mt-auto">
+                            View & Donate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-1">
+                    <h4 class="text-xl font-bold text-secondary mb-4">CareQueue</h4>
+                    <p class="text-gray-400">Bridging the gap between donors and NGOs through safe and efficient clothing donation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="careQueue.html#campaigns" class="hover:text-white transition-colors">Campaigns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">For NGOs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Get Involved</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Donate Clothes</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Volunteer</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner with Us</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Contact</h4>
+                    <p class="text-gray-400">123 Charity Lane,<br>Hopeville, India</p>
+                    <p class="text-gray-400 mt-2">Email: contact@carequeue.org</p>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 CareQueue. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
